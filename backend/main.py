@@ -26,6 +26,7 @@ genai.configure(api_key='AIzaSyCq1_hUxfXI4mjh-r_5rqZaZqJTrjYRjwk')
   # Set API key in environment
 
 # Suppress warnings
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 warnings.filterwarnings('ignore', category=UserWarning)
 
@@ -788,7 +789,7 @@ def predict_disease():
         predicted_class = classes[np.argmax(prediction)]
         confidence = float(np.max(prediction))
 
-        # Get Gemini AI advice
+        # Get Gemini AI advice 
         gemini_advice = get_gemini_advice(predicted_class, confidence)
 
         return jsonify({
@@ -808,3 +809,5 @@ def predict_disease():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=False)
+
+
